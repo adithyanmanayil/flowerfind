@@ -1,0 +1,57 @@
+<Doctype !html>
+<html>
+	<head>
+		<meta name = "viewport" content = "width = device-width, initial-scale= 1.0">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="{{url_for('static', filename = 'css/styles.css')}}">
+	</head>
+
+	<style>
+		
+	</style>
+
+	<body>
+		<div class = "container-fluid">
+			<br><br><br>
+			<label>PREDICTION USING ML</label>
+			<br><br><br>
+			<div class = "col-10">
+				<form method = "POST", action = "{{url_for('home')}}">
+					<table>
+						<tr>
+							<td>
+								<input type = "text", class="txt" name = "a", placeholder = "Sepal Length" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type = "text", class="txt" name = "b", placeholder = "Sepal Width" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type = "text", class="txt" name = "c", placeholder = "Petal Length" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type = "text", class="txt" name = "d", placeholder = "Petal Width" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input id="submit", type = "submit", value = "PREDICT">
+							</td>
+						</tr>
+					</table>
+				</form>
+
+			</div>		
+
+
+				{% if data %}
+					<h4>Prediction: {{data}}</h4>
+				{% endif %}
+		</div>
+	</body>
+</html>
